@@ -34,7 +34,7 @@ module.exports = function solveSudoku(matrix) {
   }
 
 
-
+//Данная функция находит решения по строке
   function getRowValue(row) {
     var set = new Set();
     var value = [];
@@ -51,6 +51,7 @@ module.exports = function solveSudoku(matrix) {
     return value;
   }
 
+//Данная функция находит решение по столбцу
   function getColValue(initial, col) {
     var set = new Set();
     var value = [];
@@ -67,6 +68,7 @@ module.exports = function solveSudoku(matrix) {
     return value;
   }
 
+//Данная функция отбирает решение по квадрату
   function getSquareValue(initial, row, col) {
     var set = new Set();
     var rowPos = 0; colPos = 0, value = [];
@@ -119,6 +121,7 @@ module.exports = function solveSudoku(matrix) {
     return value;
   }
 
+//Данная функция возвращает пересечение(из теории множеств) трёх массивов
   function getSolved(arrSolved) {
     arrSolved.sort(function(a,b){
       return a.length - b.length;
